@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Tactical Slate Palette */
+  --bg-primary: #020617;
+  /* slate-950 */
+  --bg-panel: rgba(15, 23, 42, 0.9);
+  /* slate-900/90 */
+  --border-primary: #1e293b;
+  /* slate-800 */
+
+  /* Status Colors */
+  --status-critical: #FF453A;
+  --status-warning: #FF9F0A;
+  --status-stable: #30D158;
+  --status-action: #0A84FF;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: #e2e8f0;
+  /* slate-200 */
+}
+
+/* Data values should use monospace */
+.font-data {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+  /* slate-900 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  /* slate-700 */
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+  /* slate-600 */
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-primary);
+}
+
+/* Tactical Glow Effect */
+.tactical-glow {
+  box-shadow: 0 0 10px rgba(10, 132, 255, 0.3);
+  transition: box-shadow 0.2s ease;
+}
+
+.tactical-glow:hover {
+  box-shadow: 0 0 20px rgba(10, 132, 255, 0.5);
+}
+
+/* Critical Pulse Animation */
+@keyframes critical-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.critical-pulse {
+  animation: critical-pulse 1.5s ease-in-out infinite;
+}
+
+/* Scanline Effect (Subtle) */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scanline-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(10, 132, 255, 0.3), transparent);
+  animation: scanline 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Leaflet Map Dark Mode */
+.leaflet-container {
+  background: #020617 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Dark filter for standard map tiles */
+.map-tiles-dark-filter {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.leaflet-control-zoom a {
+  background: rgba(15, 23, 42, 0.9) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 0px !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(30, 41, 59, 0.9) !important;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(10, 132, 255, 0.3);
+  color: white;
+}
