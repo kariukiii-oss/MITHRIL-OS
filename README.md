@@ -59,7 +59,7 @@ npm run dev
 
 cd frontend
 npm install
-npm run dev
+npm run dev 
 
  4. Launch Mission Control
 Open `http://localhost:3000` to access the Mithril-OS Command Interface.
