@@ -13,7 +13,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false })); // Twilio sends form-urlencoded
 app.use(bodyParser.json());
 
-app.use('/api/whatsapp', whatsappRoutes);
+app.usee('/api/whatsapp', whatsappRoutes);
 
 app.get('/', (req, res) => {
   res.send('Mithril-OS Backend is running');
